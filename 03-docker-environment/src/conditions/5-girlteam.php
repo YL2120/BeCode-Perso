@@ -4,6 +4,25 @@
 </head>
 
 <body>
+
+<?php
+
+if(isset($_GET['name']) && isset($_GET['age']) && isset($_GET['gender']) ){
+    $name=$_GET['name'];
+    $age=$_GET['age'];
+    $gender=$_GET['gender'];
+
+    if(($age>=21 && $age<=40) && ($gender=="Girl") ){
+        echo "welcome to the team !";
+    }else{
+        echo "Sorry you don't fit the criteria";
+    }
+}
+
+
+
+?>
+
     
  <form action="5-girlteam.php" method="get">
  <div>
@@ -25,19 +44,6 @@
 <input type="submit" name="submit" value="Send">
  </form>
 
- <?php
-
-if(isset($_GET['name']) && isset($_GET['age']) && isset($_GET['gender']) ){
-    if(($_GET['age']>=21 && $_GET['age']<=40) && ($_GET['gender']=="Girl") ){
-        echo "welcome to the team !";
-    }else{
-        echo "Sorry you don't fit the criteria";
-    }
-}
-
-
-
-?>
 
 
 </body>

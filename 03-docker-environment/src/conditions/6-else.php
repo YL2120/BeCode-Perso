@@ -4,8 +4,28 @@
 </head>
 
 <body>
+<?php
+
+$message="Sorry you don't fit the criteria";
+
+if(isset($_GET['name']) && isset($_GET['age']) && isset($_GET['gender']) ){
+    $name=$_GET['name'];
+    $age=$_GET['age'];
+    $gender=$_GET['gender'];
+
+   if(($age>=21 && $age<=40) && ($gender=="Girl") ){
+       $message= "welcome to the team !";
+       
+   }
+   echo $message;
+
+}
+
+
+?>
+
     
- <form action="5-girlteam.php" method="get">
+ <form action="6-else.php" method="get">
  <div>
  <label for="name">Name:</label>
 <input type="text" name="name">
@@ -25,21 +45,8 @@
 <input type="submit" name="submit" value="Send">
  </form>
 
- <?php
-
- $message="Sorry you don't fit the criteria";
-
-if(isset($_GET['name']) && isset($_GET['age']) && isset($_GET['gender']) ){
-    if(($_GET['age']>=21 && $_GET['age']<=40) && ($_GET['gender']=="Girl") ){
-        $message= "welcome to the team !";
-        
-    }
-    echo $message;
-}
-
-
-
-?>
 
 
 </body>
+
+</html>

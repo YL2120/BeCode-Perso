@@ -8,7 +8,84 @@
 
 <!-- // 3. "Different greetings according to age" Exercise -->
 
+<?php
 
+// 3. "Different greetings according to age" Exercise
+
+
+if (isset($_GET['age']) && isset($_GET['gender']) && isset($_GET['english'])){
+    $age=$_GET['age'];
+    $gender=$_GET['gender'];
+    $english=$_GET['english'];
+
+    // Form processing
+    if($age < 12){
+        if($gender=="Man"){
+            if($english=="Yes"){
+                echo "Hello Boy !";
+            }else{
+                echo"Aloha boy !";
+            }
+        }else if ($gender=="Woman"){
+            if($english=="Yes"){
+                echo "Hello Girl !";
+            }else{
+                echo"Aloha Girl !";
+            }
+        }
+    }else if ($age  >= 12 && $age  <= 18){
+        if($gender=="Man"){
+            if($english=="Yes"){
+                echo "Hello teenager man !";
+            }else{
+                echo"Aloha teenager man !";
+            }
+        }else if ($gender=="Woman"){
+            if($english=="Yes"){
+                echo "Hello teenager girl !";
+            }else{
+                echo"Aloha teenager girl !";
+            }
+        }
+    }else if ($age  >= 18 && $age  <= 115){
+        if($gender=="Man"){
+            if($english=="Yes"){
+                echo "Hello adult Boy !";
+            }else{
+                echo"Aloha adult boy !";
+            }
+        }else if ($gender=="Woman"){
+            if($english=="Yes"){
+                echo "Hello adult Girl !";
+            }else{
+                echo"Aloha adult Girl !";
+            }
+        }
+    }else{
+        if($gender=="Man"){
+            if($gender=="Man"){
+                if($english=="Yes"){
+                    echo "Very old Boy !";
+                }else{
+                    echo"Aloha old boy !";
+                }
+            }else if ($gender=="Woman"){
+                if($english=="Yes"){
+                    echo "Very old Girl !";
+                }else{
+                    echo"Aloha old Girl !";
+                }
+            }
+            }
+        
+    };
+
+    // some statement that removes all printed/echoed items
+
+}
+
+// Form (incomplete)
+?>
 
 
 <!-- // Form (incomplete) -->
@@ -33,80 +110,7 @@
     </div>
     <input type="submit" name="submit" value="Greet me now">
 </form>
-<?php
 
-// 3. "Different greetings according to age" Exercise
-
-
-if (isset($_GET['age']) && isset($_GET['gender']) && isset($_GET['english'])){
-    // Form processing
-    if($_GET['age'] < 12){
-        if($_GET['gender']=="Man"){
-            if($_GET['english']=="Yes"){
-                echo "Hello Boy !";
-            }else{
-                echo"Aloha boy !";
-            }
-        }else if ($_GET['gender']=="Woman"){
-            if($_GET['english']=="Yes"){
-                echo "Hello Girl !";
-            }else{
-                echo"Aloha Girl !";
-            }
-        }
-    }else if ($_GET['age']  >= 12 && $_GET['age']  <= 18){
-        if($_GET['gender']=="Man"){
-            if($_GET['english']=="Yes"){
-                echo "Hello teenager man !";
-            }else{
-                echo"Aloha teenager man !";
-            }
-        }else if ($_GET['gender']=="Woman"){
-            if($_GET['english']=="Yes"){
-                echo "Hello teenager girl !";
-            }else{
-                echo"Aloha teenager girl !";
-            }
-        }
-    }else if ($_GET['age']  >= 18 && $_GET['age']  <= 115){
-        if($_GET['gender']=="Man"){
-            if($_GET['english']=="Yes"){
-                echo "Hello adult Boy !";
-            }else{
-                echo"Aloha adult boy !";
-            }
-        }else if ($_GET['gender']=="Woman"){
-            if($_GET['english']=="Yes"){
-                echo "Hello adult Girl !";
-            }else{
-                echo"Aloha adult Girl !";
-            }
-        }
-    }else{
-        if($_GET['gender']=="Man"){
-            if($_GET['gender']=="Man"){
-                if($_GET['english']=="Yes"){
-                    echo "Very old Boy !";
-                }else{
-                    echo"Aloha old boy !";
-                }
-            }else if ($_GET['gender']=="Woman"){
-                if($_GET['english']=="Yes"){
-                    echo "Very old Girl !";
-                }else{
-                    echo"Aloha old Girl !";
-                }
-            }
-            }
-        
-    };
-
-    // some statement that removes all printed/echoed items
-
-}
-
-// Form (incomplete)
-?>
 
 </body>
 
