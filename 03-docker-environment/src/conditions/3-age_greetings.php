@@ -5,6 +5,19 @@
 <body>
     
 
+
+<!-- // 3. "Different greetings according to age" Exercise -->
+
+
+
+
+<!-- // Form (incomplete) -->
+
+<form method="get" action="3-age_greetings.php">
+	<label for="age">Age:</label>
+	<input type="text" name="age">
+	<input type="submit" name="submit" value="Greet me now">
+</form>
 <?php
 
 // 3. "Different greetings according to age" Exercise
@@ -28,11 +41,6 @@ if (isset($_GET['age'])){
 
 // Form (incomplete)
 ?>
-<form method="get" action="3-age_greetings.php">
-	<label for="age">Age:</label>
-	<input type="text" name="age">
-	<input type="submit" name="submit" value="Greet me now">
-</form>
 
 </body>
 
