@@ -8,7 +8,18 @@
 
 <?php
 
-$countries=["Belgium","France","Germany","Netherlands","England","Morocco","Spain","Italy","Switzerland","Portugal"];
+$countries=[
+    "BE" => "Belgium",
+    "FR" => "France",
+    "DE" => "Germany",
+    "NL" => "Netherlands",
+    "GB" => "England",
+    "MA" => "Morocco",
+    "ES" => "Spain",
+    "IT" => "Italy",
+    "CH" => "Switzerland",
+    "PT" => "Portugal"
+];
 
 
 
@@ -20,10 +31,10 @@ $countries=["Belgium","France","Germany","Netherlands","England","Morocco","Spai
 <option value="country">Select a Country  </option>
 
 <?php            
-    foreach($countries as $country){
+    foreach($countries as $key => $country){
 ?>
 
-<option value="<?php echo $country; ?>"><?php echo $country; ?></option>
+<option value="<?php echo $key; ?>"><?php echo $country; ?></option>
 
 <?php } ?>
 
