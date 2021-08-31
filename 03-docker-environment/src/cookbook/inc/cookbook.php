@@ -2,7 +2,14 @@
 
 declare(strict_types=1);
 
-include "classes/recipes.php";
+include "../classes/recipes.php";
+include "../classes/render.php";
+
+$recipe1 = new Recipe();
+$recipe1->setTitle("first recipe");
+$recipe1->setSource("grandma");
+
+echo Render::displayRecipe($recipe1);
 /**
  * Included Recipes
  *
@@ -551,3 +558,6 @@ $scones->setYield("10 scones");
 $scones->setSource("Beryl Patmore");
 
 $scones->addTag("breakfast");
+
+
+?>

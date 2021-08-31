@@ -19,10 +19,7 @@ class Recipe
         "coffee spoon"
     ];
 
-    public function displayRecipe()
-    {
-        return $this->title . " by " . $this->source;
-    }
+   
 
     private $title;
 
@@ -109,8 +106,8 @@ class Recipe
 /* $recipe1->setTitle("Boulets liégeois");
 echo $recipe1->getTitle(); */
 
-foreach ($recipe1->getIngredients() as $ing) {
-    echo $ing["amount"] . " " . $ing["measure"] . " " . $ing["item"] . "</br>";
-}
+// foreach ($recipe1->getIngredients() as $ing) {
+//     echo $ing["amount"] . " " . $ing["measure"] . " " . $ing["item"] . "</br>";
+// }
 
 ?>
