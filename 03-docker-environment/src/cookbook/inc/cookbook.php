@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-include "../classes/recipes.php";
-include "../classes/render.php";
+// include "../classes/recipes.php";
+// include "../classes/render.php";
 
-$recipe1 = new Recipe();
-$recipe1->setTitle("first recipe");
-$recipe1->setSource("grandma");
+//$recipe1 = new Recipe("Pasta bolognese");
+/*$recipe1->setTitle("first recipe");
+$recipe1->setSource("grandma");*/
 
-echo Render::displayRecipe($recipe1);
+//echo Render::displayRecipe($recipe1);
 /**
  * Included Recipes
  *

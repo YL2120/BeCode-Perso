@@ -15,8 +15,9 @@ class Recipe
         "g",
         "kg",
         "cup",
-        "soup spoon",
-        "coffee spoon"
+        "c. à soupe",
+        "c. à café",
+        "once"
     ];
 
    
@@ -91,6 +92,22 @@ class Recipe
     public function getSource()
     {
         return $this->source;
+    }
+
+    public function __construct($title)
+    {
+        $this->setTitle($title);
+    }
+
+    public function __toString()
+    {
+        $output = "You are calling a " . __CLASS__ . " object with the title \"";
+        $output .= $this->getTitle() . "\".";
+        $output .= " It is stored in " . basename(__FILE__) . "at" . __DIR__ . ".";
+        $output .= " This display from line " . __LINE__ . " in method " . __METHOD__ . "<br/>";
+        $output .= " The following methods are available for objects in this class: ";
+        $output .= implode("<br/>", get_class_methods(__CLASS__));
+        return $output;
     }
 }
 
