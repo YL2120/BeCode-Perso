@@ -109,6 +109,7 @@ class Recipe
         $output .= implode("<br/>", get_class_methods(__CLASS__));
         return $output;
     }
+    
 }
 
 //$recipe1= new Recipe();

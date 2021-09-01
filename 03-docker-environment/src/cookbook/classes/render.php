@@ -25,8 +25,24 @@ class Render {
         return $output;
     }
 
-   
+   public static function listRecipes ($titles)
+   {
+       asort($titles);
+       return implode(", <br/>", $titles);
+   }
 
+    public static function filterRecipes ($taggedRecipes)
+    {
+        
+        return implode(", <br/>", $taggedRecipes);
+    }
+
+    public static function listIngredients($list)
+    {
+        
+        
+        return implode(" <br/>", $list);
+    }
     
 }
 
