@@ -1,9 +1,10 @@
 <html>
 <head>
-    <title>Form</title>
+    <title>Update the hike !</title>
 </head>
 <body>
 <?php
+
 $servername="mysql";
 $username="root";
 $password="root";
@@ -16,8 +17,10 @@ try{
     print "Erreur !: " . $e->getMessage() . "<br/>"; 
 }
 
-$status = "";
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+
+
+/* if($_SERVER["REQUEST_METHOD"] == "POST"){
     if (isset($_POST["name"]) && isset($_POST["difficulty"]) && isset($_POST["distance"]) && isset($_POST["duration"]) && isset($_POST["height_difference"]) ){
     $name = $_POST["name"];
     $difficulty = $_POST["difficulty"];
@@ -37,40 +40,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     else if (!preg_match("/^(2[0-3]|[01]?[0-9]):[0-5][0-9]$/", $duration)){
             $status="Please enter a valid duration ex: 01:15 or 1:15";
         }
-    else {
-        
-        $sql = "INSERT INTO Hiking (name,difficulty,distance,duration,height_difference) VALUES (:name,:difficulty,:distance,:duration,:height_difference)";
-
-                $stmt = $conn->prepare($sql);
-
-                
-                $stmt->bindParam(":name", $name);
-                $stmt->bindParam(":difficulty", $difficulty);
-                $stmt->bindParam(":distance", $distance);
-                $stmt->bindParam(":duration", $duration);
-                $stmt->bindParam(":height_difference", $height_difference);
-
-                $stmt->execute();
-        
-        
-        
-        
-        $status="The hike has been added successfully.";
-    }
-    
-}
-else{
-    echo "Fill the form please.";
-}
-}
-
-?>   
+*/
+$name = $_GET['name'];
+$query="SELECT difficulty,distance,duration,height_difference from hiking.Hiking where name='$name' ";
+$result = $conn-> query($query);  // runs the query
+$final = $result->fetch(PDO::FETCH_ASSOC); //associative array thanks to fecthAll
+print_r($final);
+if ($final) {
+?>
 
 <form action="" method="POST">
 
 <div>
 <label for="name">Name:</label>
-<input type="text" name="name" value="">
+<input type="text" name="name" value="<?php echo $name ; ?>">
 </div>
 <div>
 <p>Difficulty : </p>
@@ -93,22 +76,44 @@ else{
 </div>
 <div>
 <label for="distance">Distance:</label>
-<input type="text" name="distance" value="">
+<input type="text" name="distance" value="<?php echo $final['distance'] ?>">
 </div>
 <div>
 <label for="duration">Duration:</label>
-<input type="text" name="duration" value="">
+<input type="text" name="duration" value="<?php echo $final['duration'] ?>">
 </div>
 <div>
 <label for="height_difference">Height difference:</label>
-<input type="text" name="height_difference" value="">
+<input type="text" name="height_difference" value="<?php echo $final['height_difference'] ?>">
 </div>
-<input type="submit" value="Send">
+<?php } ?>
+<input type="submit" value="Update" name="update">
 <div>
-    <?php echo $status ?>
+    <?php 
+    echo $status 
+    ?>
 </div>
 
 </form>
 
+
+
+
+
+
+
+
+
+
+
+
 </body>
+
+
+
+
+
+
+
+
 </html>

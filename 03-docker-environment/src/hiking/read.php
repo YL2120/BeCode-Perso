@@ -34,9 +34,16 @@ try{
     $final = $result->fetchAll(PDO::FETCH_ASSOC); //associative array thanks to fecthAll
 
     if ($final) {
-        foreach ($final as $row){
-            echo "<tr><td>". $row["name"] . "</td><td>" . $row["difficulty"] ."</td><td>" . $row["distance"] . "km" . "</td><td>" . $row["duration"] . "</td><td>" . $row["height_difference"] . "m" ."</td></tr>";
-        }
+        foreach ($final as $row){ ?>
+            <tr>
+            <td> <?php echo $row['name']; ?></td>
+            <td> <?php echo $row['difficulty']; ?> </td>
+            <td> <?php echo $row['distance']; ?></td> 
+            <td> <?php echo $row['duration']; ?> </td> 
+            <td> <?php echo $row['height_difference']; ?> </td>
+            <td><a href="update.php?name=<?php echo $row['name']; ?>">Update the hike</a></td>
+        </tr>
+       <?php }
        
     }
     else{
