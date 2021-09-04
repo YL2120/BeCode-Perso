@@ -45,7 +45,16 @@ $name = $_GET['name'];
 $query="SELECT difficulty,distance,duration,height_difference from hiking.Hiking where name='$name' ";
 $result = $conn-> query($query);  // runs the query
 $final = $result->fetch(PDO::FETCH_ASSOC); //associative array thanks to fecthAll
-print_r($final);
+
+function is_checked($db_value, $html_value){
+    if($db_value == $html_value){
+      return "checked";
+    }
+    else{
+      return "";
+    }
+  }
+
 if ($final) {
 ?>
 
@@ -58,19 +67,19 @@ if ($final) {
 <div>
 <p>Difficulty : </p>
 <div>
-    <input type="radio" id="easy" name="difficulty" value="easy">
+    <input type="radio" id="easy" name="difficulty" value="easy" <?php if($final["difficulty"]=="easy") echo "checked"; ?> >
     <label for="easy">Easy</label>
 </div>
 <div>
-    <input type="radio" id="middle" name="difficulty" value="middle">
+    <input type="radio" id="middle" name="difficulty" value="middle" <?php if($final["difficulty"]=="middle") echo "checked"; ?>>
     <label for="middle">Middle</label>
 </div>
 <div>
-    <input type="radio" id="hard" name="difficulty" value="hard">
+    <input type="radio" id="hard" name="difficulty" value="hard"  <?php if($final['difficulty']=="Difficult") echo "checked"; ?>>
     <label for="hard">Hard</label>
 </div>
 <div>
-    <input type="radio" id="veryHard" name="difficulty" value="very hard">
+    <input type="radio" id="veryHard" name="difficulty" value="very hard"  <?php if($final['difficulty']=="Very difficult") echo "checked"; ?> >
     <label for="veryHard">Very hard</label>
 </div>
 </div>
