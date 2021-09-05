@@ -75,20 +75,20 @@ else{
 <div>
 <p>Difficulty : </p>
 <div>
-    <input type="radio" id="easy" name="difficulty" value="easy">
-    <label for="easy">Easy</label>
+    <input type="radio" id="Easy" name="difficulty" value="Easy">
+    <label for="Easy">Easy</label>
 </div>
 <div>
-    <input type="radio" id="middle" name="difficulty" value="middle">
-    <label for="middle">Middle</label>
+    <input type="radio" id="Middle" name="difficulty" value="Middle">
+    <label for="Middle">Middle</label>
 </div>
 <div>
-    <input type="radio" id="hard" name="difficulty" value="hard">
-    <label for="hard">Hard</label>
+    <input type="radio" id="hard" name="difficulty" value="Hard">
+    <label for="Hard">Hard</label>
 </div>
 <div>
-    <input type="radio" id="veryHard" name="difficulty" value="very hard">
-    <label for="veryHard">Very hard</label>
+    <input type="radio" id="veryHard" name="difficulty" value="Very Hard">
+    <label for="Very Hard">Very hard</label>
 </div>
 </div>
 <div>
